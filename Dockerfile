@@ -28,6 +28,7 @@ RUN apt-get update && apt-get install -y software-properties-common \
     coinor-cbc \
     zlib1g-dev \
     libbz2-dev \
+    libnss-sss \
 && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9 \
 && rm -rf /var/lib/apt/lists/* \
 && apt-get clean \
@@ -89,11 +90,11 @@ ENV PATH=/usr/local/bin/OptiType:$PATH
 USER biodocker
 
 # Change workdir to /data/
-WORKDIR /data/
+#WORKDIR /data/
 
 # Define default command
-ENTRYPOINT ["OptiTypePipeline.py"]
-CMD ["-h"]
+#ENTRYPOINT ["OptiTypePipeline.py"]
+#CMD ["-h"]
 
 ##################### INSTALLATION END ##########################
 
